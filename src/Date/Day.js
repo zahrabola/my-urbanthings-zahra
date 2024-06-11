@@ -8,7 +8,7 @@ const Day = ({ state, handleChange }) => {
         label="Day"
         name="name"
         type="radio"
-      value={"day"}
+      value="day"
         checked={state.name === "day"}
         onChange={handleChange}
       />
@@ -18,7 +18,7 @@ const Day = ({ state, handleChange }) => {
         label="Week"
         name="name"
         type="radio"
-        value={"week"}
+        value="week"
         checked={state.name === "week"}
         onChange={handleChange}
       />
@@ -28,7 +28,7 @@ const Day = ({ state, handleChange }) => {
         label="Month"
         name="name"
         type="radio"
-        value={"month"}
+        value="month"
         checked={state.name === "month"}
         onChange={handleChange}
       />

@@ -7,10 +7,11 @@ import Step3 from "../Steps/Step3";
 import Step4 from "../Steps/Step4";
 import StepFinal from "../Steps/StepFinal";
 import Container from "react-bootstrap/Container";
-//import { Form } from "react-bootstrap";
+import  Form  from "react-bootstrap/Form";
 
 const MultiForm = () => {
   const { prev, next, total, current } = useSteps();
+
 
   const [state, setState] = useState({
     fname: "",
@@ -53,7 +54,7 @@ const MultiForm = () => {
       [e.target.name]: value,
     });
   };
-  
+
   const handleStartDateChange = (date) => {
     setState({ ...state, startDate: date });
   };
@@ -62,12 +63,9 @@ const MultiForm = () => {
     setState({ ...state, endDate: date });
   };
 
-  
-  const handleAddFormSubmit = (e) => {
-    e.preventDefault();
+  const handleAddFormSubmit = (event) => {
+    event.preventDefault();
   };
-
-
 
   console.log(state);
 
@@ -75,10 +73,9 @@ const MultiForm = () => {
     <Container
       style={{ width: "28rem", border: "1px solid #ddd", padding: "10px" }}
     >
-       
-        <h2>Urban Things</h2>
+   <Form onSubmit={handleAddFormSubmit}>
         <Steps>
-          <Step1 state={state} handleChange={handleChange} handleAddFormSubmit={handleAddFormSubmit} />
+          <Step1 state={state} handleChange={handleChange} />
           <Step2
             state={state}
             handleStartDateChange={handleStartDateChange}
@@ -95,9 +92,10 @@ const MultiForm = () => {
           <StepFinal state={state} />
         </Steps>
         <div>
-        <Navigation prev={prev} next={next} current={current} total={total} />
+          <Navigation prev={prev} next={next} current={current} total={total} />
         </div>
-       
+    </Form>
+      
     </Container>
   );
 };

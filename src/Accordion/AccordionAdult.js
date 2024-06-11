@@ -52,7 +52,7 @@ const AccordionAdult = ({ activationTypeOptions, handleChange, state }) => {
         label="£8.00"
         name="price"
         type="radio"
-        value={"8"}
+        value="8"
         checked={state.price === "8"}
         onChange={handleChange}
       />
@@ -64,7 +64,7 @@ const AccordionAdult = ({ activationTypeOptions, handleChange, state }) => {
             label="£4.00"
             name="price"
             type="radio"
-            value={"4"}
+            value="4"
             checked={state.price === "4"}
             onChange={handleChange}
           />
@@ -75,7 +75,7 @@ const AccordionAdult = ({ activationTypeOptions, handleChange, state }) => {
             label="£6.00"
             name="price"
             type="radio"
-            value={"6"}
+            value="6"
             checked={state.price === "6"}
             onChange={handleChange}
           />
