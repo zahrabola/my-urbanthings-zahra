@@ -7,7 +7,7 @@ import Step3 from "../Steps/Step3";
 import Step4 from "../Steps/Step4";
 import StepFinal from "../Steps/StepFinal";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+
 
 const MultiForm = () => {
   const { prev, next, total, current } = useSteps();
@@ -15,20 +15,57 @@ const MultiForm = () => {
   const [state, setState] = useState({
     fname: "",
     lname: "",
+    status: "Published",
+    startDate: new Date(),
+    endDate: new Date(),
+    activationType: "",
+    activationTypeChild: "",
+    price: "",
     name:"",
-    
+    childprice: "",
+    isStatus: false,
+    currency: "GBP",
+    field0: "1",
+    field1: "2",
+    productId: "BZ02",
+    operatorId: "12345",
   });
 
+  const activationTypeOptions = [
+    { value: "", label: "Select Activation Type" },
+    { value: "OnPurchased", label: "Standard", price: 8 },
+    { value: "OnAdvance", label: "Advance", price: 4 },
+    { value: "onOffPeak", label: "Off Peak", price: 6 },
+  ];
+
+  const activationTypeOptionsChild = [
+    { value: "", label: "Select Activation Type" },
+    { value: "OnPurchasedChild", label: "Standard", price: 3 },
+    { value: "OnAdvanceChild", label: "Advance", price: 2 },
+    { value: "onOffPeakChild", label: "Off Peak", price: 1 },
+  ];
 
   const handleChange = (e) => {
     const value =
-    e.target.type === "checkbox" ? e.target.checked : e.target.value;
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setState({
       ...state,
       [e.target.name]: value,
     });
   };
+  
+  const handleStartDateChange = (date) => {
+    setState({ ...state, startDate: date });
+  };
 
+  const handleEndDateChange = (date) => {
+    setState({ ...state, endDate: date });
+  };
+
+  /*
+  const handleAddFormSubmit = (e) => {
+    e.preventDefault();
+  };*/
 
   console.log(state);
 
@@ -36,19 +73,29 @@ const MultiForm = () => {
     <Container
       style={{ width: "28rem", border: "1px solid #ddd", padding: "10px" }}
     >
-      <Form>
-      <h2>Urban Things</h2>
+   
+        <h2>Urban Things</h2>
         <Steps>
           <Step1 state={state} handleChange={handleChange} />
-          <Step2  state={state}  handleChange={handleChange}/>
-          <Step3 />
-          <Step4 />
-          <StepFinal />
+          <Step2
+            state={state}
+            handleStartDateChange={handleStartDateChange}
+            handleEndDateChange={handleEndDateChange}
+            handleChange={handleChange}
+          />
+          <Step3
+            state={state}
+            handleChange={handleChange}
+            activationTypeOptions={activationTypeOptions}
+            activationTypeOptionsChild={activationTypeOptionsChild}
+          />
+          <Step4 state={state} />
+          <StepFinal state={state} />
         </Steps>
         <div>
           <Navigation prev={prev} next={next} />
         </div>
-      </Form>
+    
     </Container>
   );
 };

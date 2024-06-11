@@ -1,9 +1,12 @@
 import React from 'react';
 
-const StepFinal = () => {
+const StepFinal = ({state}) => {
     return (
         <div>
-            final page 
+               <h2>Form Json</h2>
+           <pre>
+          <code>{JSON.stringify(state, null, 2)}</code>
+        </pre>
         </div>
     );
 }

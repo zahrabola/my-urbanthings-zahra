@@ -2,16 +2,19 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+///import Form from 'react-bootstrap/Form';
 
-const Step1 = (state, handleChange) => {
+
+const Step1 = ({ state, handleChange,  }) => {
   return (
-    <div>
+    
       <Form>
         <Row>
           {" "}
           <h2>Form</h2>{" "}
         </Row>
         <hr />
+        
         <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>First Name</Form.Label>
@@ -49,7 +52,7 @@ const Step1 = (state, handleChange) => {
           />
         </Form.Group>
       </Form>
-    </div>
+
   );
 };
 
