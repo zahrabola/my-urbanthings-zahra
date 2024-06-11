@@ -4,7 +4,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Navigation = ({ prev, next }) => {
+const Navigation = ({ prev, next, current, total }) => {
+  const FinalFormStep = current === total;
   return (
     <div>
       <Container style={{ padding: "20px" }}>
@@ -21,13 +22,16 @@ const Navigation = ({ prev, next }) => {
           </Col>
           <Col className="d-flex justify-content-center">
             {" "}
-            <Button
-              variant="primary"
-              onClick={next}
-              style={{ marginRight: 10 }}
-            >
-              Next
-            </Button>
+            {FinalFormStep ? null : (
+              <Button
+                variant="primary"
+                onClick={next}
+                style={{ marginRight: 10 }}
+              >
+                {" "}
+                Next
+              </Button>
+            )}
           </Col>
         </Row>
       </Container>

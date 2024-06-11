@@ -93,7 +93,7 @@ const MultiForm = () => {
           <StepFinal state={state} />
         </Steps>
         <div>
-          <Navigation prev={prev} next={next} />
+        <Navigation prev={prev} next={next} current={current} total={total} />
         </div>
     
     </Container>

@@ -17,8 +17,8 @@ const AccordionChild = ({activationTypeOptionsChild, handleChange, state }) => {
         <div>
         <Form.Select
           aria-label="Default select example"
-          name="activationType"
-          value={state.activationType}
+          name="activationTypeChild"
+          value={state.activationTypeChild}
           onChange={handleChange}
         >
           {activationTypeOptionsChild.map((option) => (
@@ -28,13 +28,13 @@ const AccordionChild = ({activationTypeOptionsChild, handleChange, state }) => {
           ))}
         </Form.Select>
         <div className="p-2">
-          {selectedPrice && (
-            <p> Selected Ticket Price: £{selectedPrice.toFixed(2)}</p>
-          )}
+        {selectedPrice && (
+    <p>Selected Ticket Price: £{selectedPrice.toFixed(2)}</p>
+  )}
         </div>
         <div>
-  
-          <Form.Check
+      
+        <Form.Check
             type="checkbox"
             name="isStatus"
             label="Please Check"
@@ -51,24 +51,24 @@ const AccordionChild = ({activationTypeOptionsChild, handleChange, state }) => {
             <label>
               <input
                 type="radio"
-                name="price"
-                value="8"
-                checked={state.price === "8"}
+                name="childprice"
+                value="3"
+                checked={state.childprice === "3"}
                 onChange={handleChange}
               />{" "}
-              £8.00
+              £3.00
             </label>
           </Col>
           <Col>
             <label>
               <input
                 type="radio"
-                name="price"
-                value="4"
-                checked={state.price === "4"}
+                name="childprice"
+                value="2"
+                checked={state.childprice === "2"}
                 onChange={handleChange}
               />{" "}
-              £4.00
+              £2.00
             </label>
           </Col>
           <Col>
@@ -76,12 +76,12 @@ const AccordionChild = ({activationTypeOptionsChild, handleChange, state }) => {
             <label>
               <input
                 type="radio"
-                name="price"
-                value="6"
-                checked={state.price === "6"}
+                name="childprice"
+                value="1"
+                checked={state.childprice === "1"}
                 onChange={handleChange}
               />{" "}
-              £6.00
+              £1.00
             </label>
           </Col>
         </Row>
