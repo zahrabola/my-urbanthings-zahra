@@ -67,13 +67,15 @@ const MultiForm = () => {
     e.preventDefault();
   };
 
+
+
   console.log(state);
 
   return (
     <Container
       style={{ width: "28rem", border: "1px solid #ddd", padding: "10px" }}
-    >     <Form onSubmit={handleAddFormSubmit} >
-   
+    >
+         <Form onSubmit={handleAddFormSubmit} >
         <h2>Urban Things</h2>
         <Steps>
           <Step1 state={state} handleChange={handleChange} />
