@@ -62,17 +62,17 @@ const MultiForm = () => {
     setState({ ...state, endDate: date });
   };
 
-  /*
+  
   const handleAddFormSubmit = (e) => {
     e.preventDefault();
-  };*/
+  };
 
   console.log(state);
 
   return (
     <Container
       style={{ width: "28rem", border: "1px solid #ddd", padding: "10px" }}
-    >
+    >     <Form onSubmit={handleAddFormSubmit} >
    
         <h2>Urban Things</h2>
         <Steps>
@@ -95,7 +95,7 @@ const MultiForm = () => {
         <div>
         <Navigation prev={prev} next={next} current={current} total={total} />
         </div>
-    
+        </Form>
     </Container>
   );
 };
