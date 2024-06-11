@@ -55,7 +55,7 @@ const AccordionChild = ({
             label="£3.00"
             name="childprice"
             type="radio"
-            value="3"
+            value={"3"}
             checked={state.childprice === "3"}
             onChange={handleChange}
           />
@@ -66,7 +66,7 @@ const AccordionChild = ({
             label="£2.00"
             name="childprice"
             type="radio"
-            value="2"
+            value={"2"}
             checked={state.childprice === "2"}
             onChange={handleChange}
           />
@@ -77,7 +77,7 @@ const AccordionChild = ({
             label="£1.00"
             name="childprice"
             type="radio"
-            value="1"
+            value={"1"}
             checked={state.childprice === "1"}
             onChange={handleChange}
           />

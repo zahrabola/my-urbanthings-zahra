@@ -5,10 +5,10 @@ import Row from "react-bootstrap/Row";
 ///import Form from 'react-bootstrap/Form';
 
 
-const Step1 = ({ state, handleChange,  }) => {
+const Step1 = ({ state, handleChange, handleAddFormSubmit }) => {
   return (
     
-      <Form>
+      <Form  onSubmit={handleAddFormSubmit} >
         <Row>
           {" "}
           <h2>Form</h2>{" "}
