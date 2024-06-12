@@ -16,6 +16,7 @@ const MultiForm = () => {
   const [state, setState] = useState({
     fname: "",
     lname: "",
+    email:"",
     status: "Published",
     startDate: new Date(),
     endDate: new Date(),

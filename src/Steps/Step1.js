@@ -47,7 +47,7 @@ const Step1 = ({ state, handleChange  }) => {
             type="email"
             required
             name="email"
-            /*value={state.email}*/
+            value={state.email}
             onChange={handleChange}
           />
         </Form.Group>
